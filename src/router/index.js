@@ -5,6 +5,8 @@ import BlackShirt from '../views/BlackShirt.vue'
 import ContactView from '../views/ContactView.vue'
 import CartView from '../views/CartView.vue'
 import OrderForm from '../views/OrderForm.vue'
+import EventsView from '../views/EventsView.vue'
+import ShopView from '../views/ShopView.vue'
 
 const routes = [
   {
@@ -36,6 +38,16 @@ const routes = [
     path: '/order',
     name: 'OrderForm',
     component: OrderForm
+  },
+  {
+    path: '/events',
+    name: 'EventsView',
+    component: EventsView
+  },
+  {
+    path: '/shop',
+    name: 'ShopView',
+    component: ShopView
   },
   {
     path: '/about',

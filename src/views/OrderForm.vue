@@ -5,36 +5,36 @@
       <v-row>
         <v-col>
           <v-container style="margin-top:150px; padding: 40px; border:1px solid white;">
-            <h1 class="text-white">Your Cart</h1>
+            <h1 class="">Your Cart</h1>
             <div class="overflow-auto">
               <v-table class="f6 w-100 mw8 center" cellspacing="0">
                 <thead>
                   <tr>
-                    <th class="fw6 tl pa3 text-white bg-black">Product</th>
-                    <th class="fw6 tl pa3 text-white bg-black">Price</th>
-                    <th class="fw6 tl pa3 text-white bg-black">Quantity</th>
-                    <th class="fw6 tl pa3 text-white bg-black">Total</th>
-                    <th class="fw6 tl pa3 text-white bg-black"></th>
+                    <th class="fw6 tl pa3  bg-black">Product</th>
+                    <th class="fw6 tl pa3  bg-black">Price</th>
+                    <th class="fw6 tl pa3  bg-black">Quantity</th>
+                    <th class="fw6 tl pa3  bg-black">Total</th>
+                    <th class="fw6 tl pa3  bg-black"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="product in products" :key="product.id">
-                    <td class="text-white bg-black">{{ product.title }}</td>
-                    <td class="text-white bg-black">{{ product.price }}</td>
-                    <td class="text-white bg-black">
+                    <td class=" bg-black">{{ product.title }}</td>
+                    <td class=" bg-black">{{ product.price }}</td>
+                    <td class=" bg-black">
                       <input
                         v-model.number="product.quantity"
                         min="1"
                         :max="product.newQuantityInStock"
                         type="number"
                         id="quantity"
-                        class="form-control w-75 d-block text-white bg-black"
+                        class="form-control w-75 d-block  bg-black"
                       />
                     </td>
-                    <td class="text-white bg-black">
+                    <td class=" bg-black">
                       BGN {{ product.price * product.quantity }}
                     </td>
-                    <td class="text-white bg-black">
+                    <td class=" bg-black">
                       
                     </td>
                   </tr>
@@ -48,11 +48,11 @@
             <v-container style="margin-top:150px; padding: 40px; border:1px solid white;">
         <v-row>
             <v-col>
-                <h1 class="mt-8 text-white">Enter your details below</h1>
+                <h1 class="mt-8 ">Enter your details below</h1>
             <v-divider></v-divider>
             <form @submit.prevent="sendEmail" id="contactForm">
             <v-text-field
-              class="text-white"
+              class=""
               label="Name"
               persistent-hint
               v-model="name"
@@ -61,21 +61,21 @@
 
             <v-text-field
               label="Email"
-              class="text-white"
+              class=""
               v-model="email"
               name="email"
               persistent-hint
             ></v-text-field>
             <v-text-field
               label="Phone"
-              class="text-white"
+              class=""
               v-model="phone"
               name="phone"
               persistent-hint
             ></v-text-field>
             <v-textarea
               label="Ekont Office"
-              class="text-white"
+              class=""
               persistent-hint
               name="ekont-office"
               v-model="ekontOffice"
@@ -157,3 +157,6 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+</style>

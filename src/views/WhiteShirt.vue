@@ -3,7 +3,12 @@
     <NavBar />
 
     <v-container style="margin-top: 150px">
-      <v-row align="center" justify="center">
+      <v-row
+        align="center"
+        justify="center"
+        v-for="product in products"
+        :key="product.id"
+      >
         <v-col style="margin-left: 20%">
           <v-carousel>
             <v-carousel-item
@@ -18,8 +23,9 @@
           </v-carousel>
         </v-col>
         <v-col style="margin-right: 20%">
-          <h2 class="text-white">White Swan T-Shirt in White</h2>
-          <h4 class="text-white">20 BGN</h4>
+          <h2 class="text-white">{{product.name}}</h2>
+          <h4 class="text-white">{{ product.price }} BGN</h4>
+          <h4 class="text-white">COLOR: {{ product.color }} </h4>
           <br />
           <v-select
             class="text-white"
@@ -29,15 +35,17 @@
           <br />
           <v-dialog v-model="dialog">
             <template v-slot:activator="{ props }">
-              <a class="text-white" style="border-bottom: 1px solid white" v-bind="props"> View Measurements Chart </a>
+              <a
+                class="text-white"
+                style="border-bottom: 1px solid white"
+                v-bind="props"
+              >
+                View Measurements Chart
+              </a>
             </template>
 
             <v-card style="background: black">
-                <v-img
-              src="../assets/pictures/sizes.png"
-              
-              cover
-            ></v-img>
+              <v-img src="../assets/pictures/sizes.png" cover></v-img>
               <v-card-actions>
                 <v-btn variant="flat" block @click="dialog = false"
                   >Close</v-btn
@@ -69,7 +77,16 @@
           </v-expansion-panels>
           <br />
           <v-row align="center" justify="center" style="margin-top: 60px">
-            <v-btn class="text-white" variant="outlined"> BUY NOW </v-btn>
+            <div class="container">
+              <v-btn
+                class="text-white btn my-2"
+                id="buttonBuyNow"
+                width="150px"
+                variant="outlined"
+                @click="addProductToCart(product);added(product.id)"
+                >BUY NOW
+              </v-btn>
+            </div>
           </v-row>
         </v-col>
       </v-row>
@@ -115,7 +132,9 @@
               justify="center"
               style="margin-top: 30px"
             >
-              <v-btn class="text-white" variant="outlined" to="/blackShirt" > SEE MORE </v-btn>
+              <v-btn class="text-white" variant="outlined" to="/blackShirt">
+                SEE MORE
+              </v-btn>
             </v-card-text>
           </v-card>
         </v-col>
@@ -139,7 +158,7 @@
               justify="center"
               style="margin-top: 30px"
             >
-              <v-btn class="text-white" to="/blackShirt">SEE MORE </v-btn>
+              <v-btn class="text-white" variant="outlined" to="/blackShirt">SEE MORE </v-btn>
             </v-card-text>
           </v-card>
         </v-col>
@@ -152,6 +171,7 @@
 
 <script>
 import { defineComponent } from "vue";
+import axios from "axios";
 import NavBar from "../components/NavBar.vue";
 import FooterView from "../components/FooterView.vue";
 export default defineComponent({
@@ -162,11 +182,55 @@ export default defineComponent({
   },
   data() {
     return {
+      clicked: false,
+      msg1: "ADDED TO CART",
+      products:[],
       dialog: false,
     };
   },
-  methods: {},
+  mounted() {
+    async function getData() {
+      try {
+        let res = await axios({
+          url: "https://63e68b1a7eef5b2233882583.mockapi.io/events/products/50",
+          method: "get",
+          timeout: 8000,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res.status == 200) {
+          console.log(res.status);
+        }
+        return res.data;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    getData().then((res) => (this.products = [res]));
+  },
+  methods: {
+    added() {
+      let btn = document.getElementById("buttonBuyNow");
+      console.log(this.products,'products')
+      btn.innerHTML = "ADDED TO CART";
+
+      btn.style.backgroundColor = "green";
+      setTimeout(function () {
+        btn.innerHTML = "BUY NOW";
+        btn.style.backgroundColor = "";
+      }, 1500);
+    },
+    addProductToCart(product) {
+      this.$store.dispatch("addProductToCart", product);
+    },
+  },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+#home {
+  background-color: black;
+}
+</style>

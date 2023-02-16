@@ -68,8 +68,8 @@
             </v-expansion-panel>
           </v-expansion-panels>
           <br />
-          <v-row align="center" justify="center" style="margin-top: 60px">
-            <v-btn class="text-white" variant="outlined"> BUY NOW </v-btn>
+          <v-row align="center" justify="center"  style="margin-top: 60px">
+            <v-btn class="text-white" variant="outlined" id="buttonBuyNow" width="150px"> BUY NOW </v-btn>
           </v-row>
         </v-col>
       </v-row>
@@ -165,8 +165,23 @@ export default defineComponent({
       dialog: false,
     };
   },
-  methods: {},
+  methods: {
+    added() {
+    let btn = document.getElementById("buttonBuyNow");
+    
+    btn.innerHTML = "ADDED TO CART"
+    
+    btn.style.backgroundColor = "green";
+    setTimeout(function(){
+      btn.innerHTML = "BUY NOW"
+      btn.style.backgroundColor = "";
+    },1500)
+  }},
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+#home {
+  background-color: black;
+}
+</style>

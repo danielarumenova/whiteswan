@@ -5,14 +5,23 @@
         <v-divider></v-divider>
         <v-row>
           <v-col align="center">
-            <h2 class="text-white">Lets get in touch!</h2>
+            <v-img class="mr-3" src="../assets/pictures/logows.png" height="200px" width="200px"></v-img>
           </v-col>
           <v-col align="center">
             <h2 class="text-white">Contact Us</h2>
+            <br>
+            <p class="text-white text-center">Tel: (+359) 89 859 7716</p>
+            <br>
+            <p class="text-white text-center">whiteswan2k20@gmail.com</p>
           </v-col>
           
           <v-col align="center">
-            <h2 class="text-white">Social</h2>
+            <h2 class="text-white">Site Map</h2>
+            <v-btn class="text-white" variant="text" style="margin-right:50px" to="/">Home</v-btn><br/>
+            <v-btn class="text-white" variant="text" style="margin-right:25px" to="/about">About us</v-btn><br/>
+            <v-btn class="text-white" variant="text" style="margin-right:45px" to="/events">Events</v-btn><br/>
+            <v-btn class="text-white" variant="text" style="margin-right:55px" to="/shop">Shop</v-btn><br/>
+            <v-btn class="text-white" variant="text" style="margin-right:30px" to="/contact">Contact</v-btn><br/>
           </v-col>
         </v-row>
         <v-row>
@@ -20,29 +29,8 @@
             <!-- empty -->
           </v-col>
           <v-col align="center" justify="center">
-            <p class="text-white text-center">
-              Ruse,Bulgaria
-            </p>
-            <p class="text-white text-center">Tel: (+359) 89 859 7716</p>
           </v-col>
           <v-col>
-            <v-col align="center" justify="center">
-              <v-btn
-                class="mx-4"
-                icon="fas fa-brands fa-instagram"
-                variant="plain"
-                @click="gotoInsta()"
-                color="white"
-              ></v-btn
-              >
-              <v-btn
-                class="mx-4"
-                icon="fas fa-brands fa-facebook"
-                @click="gotoFacebook()"
-                variant="plain"
-                color="white"
-              ></v-btn
-            ></v-col>
           </v-col>
         </v-row>
       </v-col>
@@ -64,4 +52,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>

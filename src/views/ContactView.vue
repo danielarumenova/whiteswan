@@ -10,11 +10,11 @@
         </v-col>
 
         <v-col>
-          <h1 class="mt-8 text-white">Lets Party Together</h1>
+          <h1 class="mt-8 ">Lets Party Together</h1>
           <v-divider></v-divider>
           <form @submit.prevent="sendEmail" id="contactForm">
             <v-text-field
-              class="text-white"
+              class=""
               label="Name"
               persistent-hint
               v-model="name"
@@ -23,14 +23,14 @@
 
             <v-text-field
               label="Email"
-              class="text-white"
+              class=""
               v-model="email"
               name="email"
               persistent-hint
             ></v-text-field>
             <v-textarea
               label="Message"
-              class="text-white"
+              class=""
               persistent-hint
               name="message"
               v-model="message"
@@ -101,4 +101,6 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
