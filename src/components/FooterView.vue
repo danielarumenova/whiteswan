@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="black">
+  <v-footer color="#1B1B1B">
     <v-row style="margin-top: 100px" align="center" justify="center">
       <v-col>
         <v-divider></v-divider>

@@ -1,37 +1,82 @@
 <template>
   <v-app id="home">
     <NavBar />
-    <v-container style="margin-top: 150px">
-      <v-row align="center" justify="center">
-        <h1 class=""> WhiteSwan Latest Post on FB</h1>
-      </v-row>
-      <v-row align="center" justify="center" style="margin-top:100px">
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fwsent2k20%2Fposts%2Fpfbid034zWbg7RWG4zXLksA1mE12W5HP64zyS2fYBFoDJfBPhSqHPLaVyrtn6UgHogXfBUFl&show_text=true&width=500" width="500" height="668" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-      </v-row>
+<v-container style="margin-top: 150px">
+  <v-row>
+    <v-col style="margin-top:100px">
+      <v-row><h1 style="font-family: 'Tilt Warp'">ABOUT</h1></v-row>
+      <v-row><p>
+        We are a Bulgarian event management company that prides ourselves on delivering a high-end experience for all of our guests. Our team works tirelessly to create attention-grabbing and intriguing party themes, and we only work with the best DJs to ensure that the music at our events is always current and popular.</p></v-row>
+    </v-col>
+    <v-col style="margin-left:50px"><v-img
+              src="../assets/pictures/6.jpeg"
+              height="350px"
+              width="600px"
+              cover
+            ></v-img></v-col>
+  </v-row>
 </v-container>
 
-<v-container style="margin-top: 150px">
-  <v-row align="center" justify="center">
-        <h1 class=""> OUR TEAM</h1>
-      </v-row>
-  <v-row
-        align="center"
-        justify="center"
-        style="margin-top: 50px; margin-bottom: 200px"
-      >
-        <v-col>
-          <v-img
-            src="../assets/pictures/2.jpeg"
-            height="500px"
-          ></v-img>
-        </v-col>
-        <v-col>
-          <p class="">
-          We are a Bulgarian event management company that prides ourselves on delivering a high-end experience for all of our guests. Our team works tirelessly to create attention-grabbing and intriguing party themes, and we only work with the best DJs to ensure that the music at our events is always current and popular.
-        </p>
-        </v-col>
-      </v-row>
+<v-container style="margin-top: 150px; margin-bottom:100px">
+  <v-row>
+    
+    <v-col><v-img
+              src="../assets/pictures/2.jpeg"
+              height="400px"
+              width="600px"
+              cover
+            ></v-img></v-col>
+            <v-col style="margin-left:50px;margin-top:100px">
+      <v-row><h1 style="font-family: 'Tilt Warp'">WHITE SWAN</h1></v-row>
+      <v-row><p>
+        In addition to the atmosphere and music, we also place a strong emphasis on the customer experience and social media engagement. We believe that fostering a positive experience for our guests is of the utmost importance and we understand that social media is one of the primary ways that people connect with events like ours. As such, we put a great deal of effort into ensuring that our guests are satisfied and that their engagement on social media reflects this satisfaction.</p></v-row>
+    </v-col>
+  </v-row>
 </v-container>
+<v-container style="margin-top:100px; margin-bottom:-115px;z-index:9999">
+      <v-row>
+        <v-col>
+          <v-card class="mx-auto" max-width="200px">
+            <v-img
+              src="../assets/pictures/10.jpeg"
+              height="200px"
+              width="200px"
+              cover
+            ></v-img>
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card class="mx-auto" max-width="200px" @click="gotoInsta()">
+            <v-img
+              src="../assets/pictures/insta.png"
+              height="200px"
+              width="200px"
+              cover
+            ></v-img>
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card class="mx-auto" max-width="200px">
+            <v-img
+              src="../assets/pictures/season2.png"
+              height="200px"
+              width="200px"
+              cover
+            ></v-img>
+          </v-card>
+        </v-col>
+        <v-col>
+          <v-card class="mx-auto" max-width="200px" @click="gotoFacebook()">
+            <v-img
+              src="../assets/pictures/facebook.png"
+              height="200px"
+              width="200px"
+              cover
+            ></v-img>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <FooterView />
   </v-app>
@@ -47,8 +92,15 @@ export default defineComponent({
   components: {
     NavBar,
     FooterView,
-    //InstagramEmbed
   },
+  methods:{
+    gotoFacebook() {
+      window.open("https://www.facebook.com/wsent2k20");
+    },
+    gotoInsta() {
+      window.open("https://www.instagram.com/white_swan_entertainment/");
+    },
+  }
 });
 </script>
 

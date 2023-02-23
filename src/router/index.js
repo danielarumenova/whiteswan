@@ -7,6 +7,7 @@ import CartView from '../views/CartView.vue'
 import OrderForm from '../views/OrderForm.vue'
 import EventsView from '../views/EventsView.vue'
 import ShopView from '../views/ShopView.vue'
+import EventInfoView from '../views/EventInfoView.vue'
 
 const routes = [
   {
@@ -20,13 +21,21 @@ const routes = [
     component: ContactView
   },
   {
-    path: '/whiteShirt',
+    path: '/WhiteShirt/:id',
     name: 'WhiteShirt',
+    props: true,
     component: WhiteShirt
   },
   {
-    path: '/blackShirt',
+    path: '/EventInfo/:id',
+    name: 'EventInfo',
+    props: true,
+    component: EventInfoView
+  },
+  {
+    path: '/BlackShirt/:id',
     name: 'BlackShirt',
+    props: true,
     component: BlackShirt
   },
   {

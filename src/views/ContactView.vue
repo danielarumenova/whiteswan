@@ -5,12 +5,10 @@
       style="margin-top: 150px; padding: 40px; border: 1px solid white"
     >
       <v-row>
-        <v-col>
-          <v-img src="@/assets/pictures/1.jpeg" cover></v-img>
-        </v-col>
+      
 
         <v-col>
-          <h1 class="mt-8 ">Lets Party Together</h1>
+          <h1 class="mt-8 " style="font-family: 'Tilt Warp'">Lets Party Together</h1>
           <v-divider></v-divider>
           <form @submit.prevent="sendEmail" id="contactForm">
             <v-text-field
