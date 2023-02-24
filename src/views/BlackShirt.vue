@@ -99,7 +99,7 @@
             style="border: 1px solid black"
           >
             <v-img
-              src="../assets/pictures/white1.jpg"
+              :src="product.urll"
               height="350px"
               cover
             ></v-img>
@@ -220,11 +220,12 @@ export default defineComponent({
       let btn = document.getElementById("buttonBuyNow");
       console.log(this.products, "products");
       btn.innerHTML = "ADDED TO CART";
-
+      this.$toast.success(`Successfully added to cart`);
+      setTimeout(this.$toast.clear, 1500)
       btn.style.backgroundColor = "green";
       setTimeout(function () {
         btn.innerHTML = "BUY NOW";
-        btn.style.backgroundColor = "";
+        btn.style.backgroundColor = "#531D5B";
       }, 1500);
     },
     reloadPage() {

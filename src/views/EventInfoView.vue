@@ -12,7 +12,7 @@
 
       <v-row>
         <v-col cols="5">
-          <v-img src="../assets/pictures/event1.jpg" cover></v-img>
+          <v-img :src="event.urll" cover></v-img>
         </v-col>
 
         <v-col>
@@ -192,15 +192,16 @@ export default defineComponent({
     gotoInsta() {
       window.open("https://www.instagram.com/white_swan_entertainment/");
     },
-    added() {
-      let btn = document.getElementById("buttonBuyNow");
+    addedEvent() {
+      let btn = document.getElementById("buttonBuyNowEvent");
       console.log(this.events, "events");
       btn.innerHTML = "ADDED TO CART";
-
+      this.$toast.success(`Successfully added to cart`);
+      setTimeout(this.$toast.clear, 1500)
       btn.style.backgroundColor = "green";
       setTimeout(function () {
         btn.innerHTML = "BUY NOW";
-        btn.style.backgroundColor = "";
+        btn.style.backgroundColor = "#531D5B";
       }, 1500);
     },
     addEventToCart(event) {
