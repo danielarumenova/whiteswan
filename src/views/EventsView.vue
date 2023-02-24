@@ -99,7 +99,7 @@
             style="border: 1px solid black"
           >
             <v-img
-              src="../assets/pictures/event1.jpg"
+              :src="event.urll"
               height="300px"
               cover
             ></v-img>

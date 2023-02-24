@@ -11,12 +11,12 @@
         <v-col style="margin-left: 20%">
           <v-carousel>
             <v-carousel-item
-              src="../assets/pictures/white1.jpg"
+              :src="product.urll"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="../assets/pictures/white2.jpg"
+            :src="product.urll2"
               cover
             ></v-carousel-item>
           </v-carousel>

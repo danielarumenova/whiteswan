@@ -94,7 +94,7 @@
             style="border: 1px solid black"
           >
             <v-img
-              src="../assets/pictures/white1.jpg"
+              :src="product.urll"
               height="350px"
               cover
             ></v-img>
@@ -136,7 +136,7 @@
             style="border: 1px solid black"
           >
             <v-img
-              src="../assets/pictures/white1.jpg"
+              :src="product.urll2"
               height="350px"
               cover
             ></v-img>
